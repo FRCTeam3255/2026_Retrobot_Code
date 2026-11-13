@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import static frc.robot.constants.ConstStateMachine.RobotStates.NONE;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -24,6 +26,7 @@ import frc.robot.DeviceIDs.controllerIDs;
 import frc.robot.commands.AddVisionMeasurement;
 import frc.robot.commands.ResetPose;
 import frc.robot.constants.ChoreoTraj;
+import frc.robot.constants.ConstStateMachine.RobotStates;
 import frc.robot.constants.ConstSystem;
 import frc.robot.constants.ConstSystem.constControllers;
 import frc.robot.subsystems.DriverStateMachine;
@@ -33,7 +36,6 @@ import frc.robot.subsystems.FreeSpin;
 import frc.robot.subsystems.Positional;
 import frc.robot.subsystems.RobotPoses;
 import frc.robot.subsystems.StateMachine;
-import frc.robot.subsystems.StateMachine.RobotState;
 import frc.robot.subsystems.Telemetry;
 import frc.robot.subsystems.Vision;
 
@@ -64,9 +66,6 @@ public class RobotContainer {
   private final Vision loggedVisionInstance = visionInstance;
   public static final Telemetry telemetryInstance = new Telemetry();
   private final Telemetry loggedTelemetryInstance = telemetryInstance;
-
-  Command TRY_NONE = Commands.deferredProxy(
-      () -> stateMachineInstance.tryState(RobotState.NONE));
 
   Command MANUAL = new DeferredCommand(
       driverStateMachineInstance.tryState(
@@ -102,9 +101,10 @@ public class RobotContainer {
   private void configDriverBindings() {
     conDriver.btn_North.whileTrue(new ResetPose());
     // Example Pose Drive
-    conDriver.btn_X
-        .whileTrue(EXAMPLE_POSE_DRIVE)
-        .onFalse(Commands.runOnce(() -> driverStateMachineInstance.setDriverState(DriverState.MANUAL)));
+    conDriver.btn_A
+        .whileTrue(NONE.TRY())
+        .onFalse(NONE.TRY());
+
   }
 
   private void configOperatorBindings() {
@@ -165,7 +165,7 @@ public class RobotContainer {
     return autoChooser.getSelected();
   }
 
-  public RobotState getRobotState() {
+  public RobotStates getRobotState() {
     return stateMachineInstance.getRobotState();
   }
 
