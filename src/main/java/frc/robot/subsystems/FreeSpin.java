@@ -14,6 +14,7 @@ import edu.wpi.first.units.Units;
 import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.DeviceIDs;
+import frc.robot.Robot;
 
 @Logged
 public class FreeSpin extends SubsystemBase {
@@ -21,7 +22,8 @@ public class FreeSpin extends SubsystemBase {
   final TalonFX intakeEastFollower = new TalonFX(DeviceIDs.freeSpinIDs.INTAKE_EAST_LEADER);
 
   Follower intakeFollower = new Follower(intakeWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
-
+  
+  private double lastDesiredIntakePercentOutput = 0;
   public FreeSpin() {
   }
 
@@ -30,11 +32,14 @@ public class FreeSpin extends SubsystemBase {
     intakeWestLeader.set(percentOutput);
     intakeEastFollower.setControl(intakeFollower);
 
+    lastDesiredIntakePercentOutput = percentOutput;
   }
 
   public double getIntakePercentOutput() {
+    if(Robot.isSimulation()) {
+      return lastDesiredIntakePercentOutput;
+    }
     return intakeWestLeader.get();
-
   }
 
   @Override
