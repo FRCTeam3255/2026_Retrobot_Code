@@ -14,7 +14,7 @@ public class ConstFreeSpin {
   public static final double STOP = 0;
   public static TalonFXConfiguration INTAKE_EAST_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration INTAKE_WEST_CONFIG = new TalonFXConfiguration();
-
+  public static double INTAKE_CUBE = 1;
   // Configure TalonFXConfiguration objects here
 
   static {
