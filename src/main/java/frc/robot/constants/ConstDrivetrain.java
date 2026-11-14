@@ -56,28 +56,28 @@ public class ConstDrivetrain {
   public static final Time ROTATION_DELAY = Seconds.of(0.5);
 
   // TODO: Swoffsets
-  public static final Angle FRONT_LEFT_ABS_ENCODER_OFFSET = Rotations.of(-0.178466796875);
-  public static final Angle FRONT_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(-0.498779296875);
-  public static final Angle BACK_LEFT_ABS_ENCODER_OFFSET = Rotations.of(-0.459716796875);
-  public static final Angle BACK_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(-0.31201171875);
+  public static final Angle FRONT_LEFT_ABS_ENCODER_OFFSET = Rotations.of(0.343017578125);
+  public static final Angle FRONT_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(0.143798828125);
+  public static final Angle BACK_LEFT_ABS_ENCODER_OFFSET = Rotations.of(0.06298828125);
+  public static final Angle BACK_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(-0.380126953125);
 
   public static class PRACTICE_BOT {
     // TODO: Swoffsets
     public static final Angle FRONT_LEFT_ABS_ENCODER_OFFSET = Rotations.of(-0.199462890625);
-    public static final Angle FRONT_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(0.474365234375);
-    public static final Angle BACK_LEFT_ABS_ENCODER_OFFSET = Rotations.of(-0.447265625);
-    public static final Angle BACK_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(-0.3193359375);
+    public static final Angle FRONT_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(0.143798828125);
+    public static final Angle BACK_LEFT_ABS_ENCODER_OFFSET = Rotations.of(0.06298828125);
+    public static final Angle BACK_RIGHT_ABS_ENCODER_OFFSET = Rotations.of(-0.380126953125);
   }
 
   public static final double SLOW_MODE_MULTIPLIER = 0.5;
 
   // Physical dimensions
   // TODO: Confirm Gear Ratios
-  public static Ratios GEAR_RATIOS = Ratios.MK4I.L2;
+  public static Ratios GEAR_RATIOS = new Ratios(12.8, 6.122448979591837, 3.5714285714285716);
 
   // TODO: Replace with actual measurement
   public static Distance WHEEL_DIAMETER = Inches.of(4.0);
-  public static Distance MODULE_OFFSET_LOCATIONS = ModuleLocations.frame29x29;
+  public static Distance MODULE_OFFSET_LOCATIONS = Inches.of(11.25);
 
   /**
    * Follow the instructions in <a href=
@@ -112,7 +112,7 @@ public class ConstDrivetrain {
   // TODO: Replace with actual measurement
   public static final boolean INVERT_LEFT_SIDE_DRIVE = false;
   public static final boolean INVERT_RIGHT_SIDE_DRIVE = true;
-  public static final boolean INVERT_STEER = true;
+  public static final boolean INVERT_STEER = false;
   public static final boolean INVERT_STEER_ENCODER = false;
 
   // -- CONFIGS --
@@ -150,11 +150,11 @@ public class ConstDrivetrain {
     DRIVE_CONFIG.kS = 0.0;
     DRIVE_CONFIG.kV = 0.124;
 
-    STEER_CONFIG.kP = 100;
+    STEER_CONFIG.kP = 80;
     STEER_CONFIG.kI = 0.0;
     STEER_CONFIG.kD = 0.5;
     STEER_CONFIG.kS = 0.1;
-    STEER_CONFIG.kV = 2.66;
+    STEER_CONFIG.kV = 1.59;
     STEER_CONFIG.kA = 0.0;
     STEER_CONFIG.StaticFeedforwardSign = StaticFeedforwardSignValue.UseClosedLoopSign;
   }
