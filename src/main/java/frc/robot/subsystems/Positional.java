@@ -15,6 +15,7 @@ import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.DeviceIDs;
 import frc.robot.Robot;
+import frc.robot.constants.ConstPositional;
 
 @Logged
 public class Positional extends SubsystemBase {
@@ -28,6 +29,9 @@ public class Positional extends SubsystemBase {
   Follower ElevatorFollower = new Follower(elevatorWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
 
   public Positional() {
+    elevatorEastFollower.getConfigurator().apply(ConstPositional.LIFT_CONFIG);
+    elevatorWestLeader.getConfigurator().apply(ConstPositional.LIFT_CONFIG);
+    forkLift.getConfigurator().apply(ConstPositional.FORK_CONFIG);
   }
 
   public void setLiftPosition(Distance height) {
