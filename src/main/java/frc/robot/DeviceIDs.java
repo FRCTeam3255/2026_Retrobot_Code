@@ -38,6 +38,8 @@ public class DeviceIDs {
 
   // FreeSpin IDs: 10~29
   public static class freeSpinIDs {
+    public static final int INTAKE_EAST_CAN = 10;
+    public static final int INTAKE_WEST_CAN = 11;
 
   }
 
