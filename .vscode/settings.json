@@ -88,5 +88,4 @@
       "query": "repo:${owner}/${repository} is:open draft:true"
     }
   ],
-  "java.debug.settings.onBuildFailureProceed": true,
 }
