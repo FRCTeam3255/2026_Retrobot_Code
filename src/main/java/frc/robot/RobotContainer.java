@@ -4,7 +4,23 @@
 
 package frc.robot;
 
+import static frc.robot.constants.ConstStateMachine.RobotStates.CLIMBING;
+import static frc.robot.constants.ConstStateMachine.RobotStates.HAS_POWER_CUBE;
+import static frc.robot.constants.ConstStateMachine.RobotStates.INTAKING;
 import static frc.robot.constants.ConstStateMachine.RobotStates.NONE;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_CLIMB;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_EXCHANGE;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_INTAKE_LV1;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_INTAKE_LV2;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_INTAKE_LV3;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_INTAKE_PORTAL;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_LEVELED_2_LAYERS;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_LEVELED_SCALE;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_SWITCH;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_DOWN_2_LAYERS;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_UP_2_LAYERS;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_UP_SCALE;
+import static frc.robot.constants.ConstStateMachine.RobotStates.SCORING;
 
 import java.util.Map;
 import java.util.Set;
@@ -25,6 +41,22 @@ import edu.wpi.first.wpilibj2.command.DeferredCommand;
 import frc.robot.DeviceIDs.controllerIDs;
 import frc.robot.commands.AddVisionMeasurement;
 import frc.robot.commands.ResetPose;
+import frc.robot.commands.states.Climbing;
+import frc.robot.commands.states.Intaking;
+import frc.robot.commands.states.None;
+import frc.robot.commands.states.PrepClimb;
+import frc.robot.commands.states.Scoring;
+import frc.robot.commands.states.PrepIntakings.PrepIntakeLV1;
+import frc.robot.commands.states.PrepIntakings.PrepIntakeLV2;
+import frc.robot.commands.states.PrepIntakings.PrepIntakeLV3;
+import frc.robot.commands.states.PrepIntakings.PrepIntakePortal;
+import frc.robot.commands.states.PrepScorings.PrepExchange;
+import frc.robot.commands.states.PrepScorings.PrepLeveled2Layers;
+import frc.robot.commands.states.PrepScorings.PrepLeveledScale;
+import frc.robot.commands.states.PrepScorings.PrepSwitch;
+import frc.robot.commands.states.PrepScorings.PrepTippedDown2Layers;
+import frc.robot.commands.states.PrepScorings.PrepTippedUp2Layers;
+import frc.robot.commands.states.PrepScorings.PrepTippedUpScale;
 import frc.robot.constants.ChoreoTraj;
 import frc.robot.constants.ConstStateMachine.RobotStates;
 import frc.robot.constants.ConstSystem;
@@ -99,11 +131,68 @@ public class RobotContainer {
   }
 
   private void configDriverBindings() {
-    conDriver.btn_North.whileTrue(new ResetPose());
-    // Example Pose Drive
-    conDriver.btn_A
-        .whileTrue(NONE.TRY())
+    conDriver.btn_North.onTrue(new ResetPose());
+
+    conDriver.btn_North
+        .onTrue(NONE.TRY())
         .onFalse(NONE.TRY());
+
+    conDriver.btn_LeftTrigger
+        .whileTrue(INTAKING.TRY())
+        .onFalse(NONE.TRY());
+
+    conDriver.btn_RightTrigger
+        .whileTrue(SCORING.TRY())
+        .onFalse(NONE.TRY());
+
+    conDriver.btn_Back
+        .onTrue(PREP_CLIMB.TRY());
+
+    conDriver.btn_RightBumper
+        .onTrue(PREP_EXCHANGE.TRY());
+
+    conDriver.btn_RightStick
+        .onTrue(NONE.TRY())
+        .onFalse(NONE.TRY());
+
+    conDriver.btn_Start
+        .onTrue(CLIMBING.TRY());
+
+    conDriver.btn_East
+        .onTrue(PREP_LEVELED_2_LAYERS.TRY());
+
+    conDriver.btn_West
+        .onTrue(PREP_TIPPED_UP_2_LAYERS.TRY());
+
+    conDriver.btn_South
+        .onTrue(PREP_TIPPED_DOWN_2_LAYERS.TRY());
+
+    conDriver.btn_Y
+        .onTrue(PREP_TIPPED_UP_SCALE.TRY());
+
+    conDriver.btn_B
+        .onTrue(PREP_LEVELED_SCALE.TRY());
+
+    conDriver.btn_A
+        .onTrue(PREP_TIPPED_UP_SCALE.TRY());
+
+    conDriver.btn_X
+        .onTrue(PREP_SWITCH.TRY());
+
+    conDriver.btn_Y
+        .onTrue(PREP_INTAKE_LV3.TRY());
+
+    conDriver.btn_B
+        .onTrue(PREP_INTAKE_LV2.TRY());
+
+    conDriver.btn_Y
+        .onTrue(PREP_INTAKE_LV1.TRY());
+
+    conDriver.btn_Y
+        .onTrue(PREP_INTAKE_PORTAL.TRY());
+
+    conDriver.btn_LeftStick
+        .onTrue(HAS_POWER_CUBE.TRY());
 
   }
 
