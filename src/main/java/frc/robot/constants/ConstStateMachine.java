@@ -57,9 +57,70 @@ public final class ConstStateMachine {
 
   public static final Map<RobotStates, Set<RobotStates>> TRANSITIONS =
       // Target State
-      Map.of(RobotStates.NONE, Set.of(
-          // Allow to come from
-          RobotStates.NONE
+      Map.ofEntries(
+          Map.entry(RobotStates.NONE, Set.of(
+              // Allow to go to
+              RobotStates.NONE,
+              RobotStates.PREP_INTAKE_LV1,
+              RobotStates.PREP_INTAKE_LV2,
+              RobotStates.PREP_INTAKE_LV3,
+              RobotStates.PREP_INTAKE_PORTAL)),
 
-      ));
+          Map.entry(RobotStates.PREP_INTAKE_LV1, Set.of(
+              RobotStates.INTAKING)),
+
+          Map.entry(RobotStates.PREP_INTAKE_LV2, Set.of(
+              RobotStates.INTAKING)),
+
+          Map.entry(RobotStates.PREP_INTAKE_LV3, Set.of(
+              RobotStates.INTAKING)),
+
+          Map.entry(RobotStates.INTAKING, Set.of(
+              RobotStates.HAS_POWER_CUBE,
+              RobotStates.NONE)),
+
+          Map.entry(RobotStates.HAS_POWER_CUBE, Set.of(
+              RobotStates.NONE,
+              RobotStates.PREP_EXCHANGE,
+              RobotStates.PREP_LEVELED_SCALE,
+              RobotStates.PREP_LEVELED_2_LAYERS,
+              RobotStates.PREP_TIPPED_UP_SCALE,
+              RobotStates.PREP_TIPPED_UP_2_LAYERS,
+              RobotStates.PREP_TIPPED_DOWN_SCALE,
+              RobotStates.PREP_TIPPED_DOWN_2_LAYERS,
+              RobotStates.PREP_SWITCH)),
+
+          Map.entry(RobotStates.PREP_EXCHANGE, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_LEVELED_SCALE, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_LEVELED_2_LAYERS, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_TIPPED_UP_SCALE, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_TIPPED_UP_2_LAYERS, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_TIPPED_DOWN_SCALE, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_TIPPED_DOWN_2_LAYERS, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.PREP_SWITCH, Set.of(
+              RobotStates.SCORING)),
+
+          Map.entry(RobotStates.SCORING, Set.of(
+              RobotStates.NONE)),
+
+          Map.entry(RobotStates.PREP_CLIMB, Set.of(
+              RobotStates.NONE,
+              RobotStates.CLIMBING)),
+
+          Map.entry(RobotStates.CLIMBING, Set.of(
+              RobotStates.PREP_CLIMB)));
 }
