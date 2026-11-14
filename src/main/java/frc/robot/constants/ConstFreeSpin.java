@@ -12,9 +12,10 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
 public class ConstFreeSpin {
 
   public static final double STOP = 0;
+  public static final double INTAKE_CUBE_PERCENT_OUT = 1;
+
   public static TalonFXConfiguration INTAKE_EAST_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration INTAKE_WEST_CONFIG = new TalonFXConfiguration();
-  public static final double INTAKE_CUBE_PERCENT_OUT = 1;
   // Configure TalonFXConfiguration objects here
 
   static {
