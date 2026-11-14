@@ -15,8 +15,12 @@ import edu.wpi.first.units.Units;
 public class ConstPositional {
   public static final double STOP = 0;
   public static TalonFXConfiguration LIFT_CONFIG = new TalonFXConfiguration();
+  public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
   static {
     // Configure TalonFXConfiguration objects here
+    FORK_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
+    FORK_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+
     LIFT_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     LIFT_CONFIG.SoftwareLimitSwitch.ForwardSoftLimitEnable = true;
