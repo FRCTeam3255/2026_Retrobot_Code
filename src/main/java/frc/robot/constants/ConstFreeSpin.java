@@ -8,12 +8,14 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
+
 /** Add your docs here. */
 public class ConstFreeSpin {
 
   public static final double STOP = 0;
   public static TalonFXConfiguration INTAKE_EAST_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration INTAKE_WEST_CONFIG = new TalonFXConfiguration();
+  public static double INTAKE_SCORING_PERCENT_OUTPUT = -1;
 
   static {
     // Configure TalonFXConfiguration objects here
