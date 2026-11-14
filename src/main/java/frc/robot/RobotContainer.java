@@ -149,16 +149,14 @@ public class RobotContainer {
         .onTrue(PREP_CLIMB.TRY());
 
     conDriver.btn_RightBumper
-        .onTrue(PREP_EXCHANGE.TRY())
-        .onFalse(NONE.TRY());
+        .onTrue(PREP_EXCHANGE.TRY());
 
     conDriver.btn_RightStick
         .onTrue(NONE.TRY())
         .onFalse(NONE.TRY());
 
     conDriver.btn_Start
-        .onTrue(CLIMBING.TRY())
-        .onFalse(NONE.TRY());
+        .onTrue(CLIMBING.TRY());
 
     conDriver.btn_East
         .onTrue(PREP_LEVELED_2_LAYERS.TRY());
