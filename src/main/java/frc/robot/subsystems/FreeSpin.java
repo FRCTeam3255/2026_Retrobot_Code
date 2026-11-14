@@ -4,13 +4,34 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.controls.Follower;
+import com.ctre.phoenix6.controls.MotionMagicExpoVoltage;
+import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.signals.MotorAlignmentValue;
+
 import edu.wpi.first.epilogue.Logged;
+import edu.wpi.first.units.Units;
+import edu.wpi.first.units.measure.Distance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.DeviceIDs;
 
 @Logged
 public class FreeSpin extends SubsystemBase {
+  final TalonFX intakeWestLeader = new TalonFX( DeviceIDs.freeSpinIDs.INTAKE_WEST_LEADER);
+  final TalonFX intakeEastFollower = new TalonFX(DeviceIDs.freeSpinIDs.INTAKE_EAST_LEADER);
+  MotionMagicExpoVoltage positionRequest = new MotionMagicExpoVoltage(0);
+
+  Follower intakeFollower = new  Follower(intakeWestLeader.getDeviceID(),MotorAlignmentValue.Opposed);
   public FreeSpin() {
   }
+
+  public void setLiftPosition(Distance height) {
+
+    intakeWestLeader.setControl(positionRequest.withPosition(height.in(Units.Inches)));
+    intakeEastFollower.setControl(intakeFollower);
+
+  }
+
 
   @Override
   public void periodic() {

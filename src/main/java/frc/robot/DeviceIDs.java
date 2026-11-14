@@ -38,11 +38,15 @@ public class DeviceIDs {
 
   // FreeSpin IDs: 10~29
   public static class freeSpinIDs {
+    public static final int INTAKE_EAST_LEADER = 10;
+    public static final int INTAKE_WEST_LEADER = 11;
 
   }
 
   // Positional IDs: 30~49
   public static class positionalIDs {
-
+      public static final int ELEVATOR_WEST_LEADER = 30;
+      public static final int ELEVATOR_EAST_FOLLOWER = 31;
+      public static final int BUDDY_CLIMB_MOTOR = 32;
   }
 }
