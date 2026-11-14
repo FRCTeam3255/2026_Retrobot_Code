@@ -43,6 +43,10 @@ public class Positional extends SubsystemBase {
     return Units.Inches.of(elevatorWestLeader.getPosition().getValueAsDouble());
   }
 
+  public void setForkLiftPercentOutput(double percentOutput) {
+    forkLift.set(percentOutput);
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
