@@ -21,8 +21,6 @@ public class Intaking extends Command {
   public void initialize() {
     RobotContainer.stateMachineInstance.setState(RobotStates.INTAKING);
     RobotContainer.freeSpinInstance.setIntakePercentOutput(ConstFreeSpin.INTAKE_CUBE_PERCENT_OUT);
-
-);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
