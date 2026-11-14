@@ -5,11 +5,8 @@
 package frc.robot.commands.states;
 
 import edu.wpi.first.wpilibj2.command.Command;
-<<<<<<< HEAD
-=======
 import frc.robot.RobotContainer;
 import frc.robot.constants.ConstStateMachine.RobotStates;
->>>>>>> 37aef8d3620ffb173c562d2b16a155ce57282c0a
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class Intaking extends Command {
@@ -20,14 +17,10 @@ public class Intaking extends Command {
 
   // Called when the command is initially scheduled.
   @Override
-<<<<<<< HEAD
-  public void initialize() {}
-=======
   public void initialize() {
         RobotContainer.stateMachineInstance.setState(RobotStates.INTAKING);
 
   }
->>>>>>> 37aef8d3620ffb173c562d2b16a155ce57282c0a
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
