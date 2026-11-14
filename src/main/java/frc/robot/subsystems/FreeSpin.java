@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 @Logged
 public class FreeSpin extends SubsystemBase {
   public FreeSpin() {
-    final TalonFX intakeRollerEastFollower = new TalonFX(DeviceIDs)
   }
 
   @Override

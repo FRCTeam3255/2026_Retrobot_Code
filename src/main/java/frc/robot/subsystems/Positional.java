@@ -21,17 +21,18 @@ public class Positional extends SubsystemBase {
   MotionMagicExpoVoltage positionRequest = new MotionMagicExpoVoltage(0);
   private Distance elevatorLiftLastDesiredPosition = Units.Inches.zero();
 
-  final TalonFX ElevatorWestLeader = new TalonFX(DeviceIDs.positionalIDs.ELEVATOR_WEST_CAN);
-  final TalonFX ElevatorEastFollower = new TalonFX(DeviceIDs.positionalIDs.ELEVATOR_EAST_CAN);
+  final TalonFX elevatorWestLeader = new TalonFX(DeviceIDs.positionalIDs.ELEVATOR_WEST_CAN);
+  final TalonFX elevatorEastFollower = new TalonFX(DeviceIDs.positionalIDs.ELEVATOR_EAST_CAN);
+  final TalonFX forkLift = new TalonFX(DeviceIDs.positionalIDs.FORK_LIFT_CAN);
 
-  Follower ElevatorFollower = new Follower(ElevatorWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
+  Follower ElevatorFollower = new Follower(elevatorWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
 
   public Positional() {
   }
 
   public void setLiftPosition(Distance height) {
-    ElevatorWestLeader.setControl(positionRequest.withPosition(height.in(Units.Inches)));
-    ElevatorEastFollower.setControl(ElevatorFollower);
+    elevatorWestLeader.setControl(positionRequest.withPosition(height.in(Units.Inches)));
+    elevatorEastFollower.setControl(ElevatorFollower);
     elevatorLiftLastDesiredPosition = height;
   }
 
@@ -39,7 +40,7 @@ public class Positional extends SubsystemBase {
     if (Robot.isSimulation()) {
       return elevatorLiftLastDesiredPosition;
     }
-    return Units.Inches.of(ElevatorWestLeader.getPosition().getValueAsDouble());
+    return Units.Inches.of(elevatorWestLeader.getPosition().getValueAsDouble());
   }
 
   @Override
