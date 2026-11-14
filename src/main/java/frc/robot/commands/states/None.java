@@ -6,6 +6,8 @@ package frc.robot.commands.states;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
+import frc.robot.constants.ConstFreeSpin;
+import frc.robot.constants.ConstPositional;
 import frc.robot.constants.ConstStateMachine.RobotStates;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
@@ -21,7 +23,9 @@ public class None extends Command {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.stateMachineInstance.setState(RobotStates.NONE);
+    RobotContainer.freeSpinInstance.setIntakePercentOutput(ConstFreeSpin.STOP);
+    RobotContainer.positionalInstance.setForkLiftPercentOutput(ConstPositional.STOP);
+    RobotContainer.positionalInstance.setForkLiftPercentOutput(ConstPositional.STOP);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
