@@ -45,9 +45,8 @@ public class DeviceIDs {
 
   // Positional IDs: 30~49
   public static class positionalIDs {
-    public static final int ELEVATOR_WEST_CAN = 30;
     public static final int ELEVATOR_EAST_CAN = 31;
-    public static final int BUDDY_CLIMB_CAN = 32;
-
+    public static final int ELEVATOR_WEST_CAN = 30;
+    public static final int FORK_LIFT_CAN = 32;
   }
 }
