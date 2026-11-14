@@ -10,10 +10,12 @@ import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.units.Units;
+import edu.wpi.first.units.measure.Distance;
 
 /** Add your docs here. */
 public class ConstPositional {
   public static final double STOP = 0;
+  public static final Distance ZERO = Units.Inches.of(0);
   public static TalonFXConfiguration LIFT_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
   static {

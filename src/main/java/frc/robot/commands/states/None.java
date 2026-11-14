@@ -24,7 +24,7 @@ public class None extends Command {
   @Override
   public void initialize() {
     RobotContainer.freeSpinInstance.setIntakePercentOutput(ConstFreeSpin.STOP);
-    RobotContainer.positionalInstance.setForkLiftPercentOutput(ConstPositional.STOP);
+    RobotContainer.positionalInstance.setLiftPosition(ConstPositional.ZERO);
     RobotContainer.positionalInstance.setForkLiftPercentOutput(ConstPositional.STOP);
   }
 
