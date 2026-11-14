@@ -18,13 +18,8 @@ public class ConstPositional {
   public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
   static {
     // Configure TalonFXConfiguration objects here
-<<<<<<< HEAD
-    FORK_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;      
-    FORK_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;                                                                                                                                                                                   
-=======
     FORK_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     FORK_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
->>>>>>> main
 
     LIFT_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
