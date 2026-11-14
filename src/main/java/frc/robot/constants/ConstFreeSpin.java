@@ -15,8 +15,6 @@ public class ConstFreeSpin {
   public static TalonFXConfiguration INTAKE_EAST_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration INTAKE_WEST_CONFIG = new TalonFXConfiguration();
 
-  // Configure TalonFXConfiguration objects here
-
   static {
     // Configure TalonFXConfiguration objects here
     INTAKE_EAST_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
@@ -24,6 +22,5 @@ public class ConstFreeSpin {
 
     INTAKE_WEST_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     INTAKE_WEST_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-
   }
 }
