@@ -24,6 +24,5 @@ public class ConstFreeSpin {
 
     INTAKE_WEST_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     INTAKE_WEST_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-
   }
 }

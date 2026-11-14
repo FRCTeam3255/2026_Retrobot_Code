@@ -10,16 +10,21 @@ import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
 
 import edu.wpi.first.units.Units;
+import edu.wpi.first.units.measure.Distance;
 
 /** Add your docs here. */
 public class ConstPositional {
   public static final double STOP = 0;
+  public static final double FORK_OUT = 0.2;
+  public static final Distance CLIMB = Units.Inches.of(0);
+  public static final Distance PREP_CLIMB = Units.Inches.of(50);  //TODO:GET ACTUAL VALUE
   public static TalonFXConfiguration LIFT_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
+
   static {
     // Configure TalonFXConfiguration objects here
-    FORK_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
-    FORK_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+    FORK_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;      
+    FORK_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;                                                                                                                                                                                   
 
     LIFT_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
     LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
