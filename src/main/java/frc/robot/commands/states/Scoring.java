@@ -20,7 +20,7 @@ public class Scoring extends Command {
   @Override
   public void initialize() {
         RobotContainer.stateMachineInstance.setState(RobotStates.SCORING);
-RobotContainer.freeSpinInstance.setIntakePercentOutput(ConstFreeSpin.REVERSE_INTAKE);
+RobotContainer.freeSpinInstance.setIntakePercentOutput(ConstFreeSpin.INTAKE_SCORING_PERCENT_OUTPUTOUTPUT);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
