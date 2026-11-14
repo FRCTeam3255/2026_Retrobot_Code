@@ -17,21 +17,25 @@ import frc.robot.DeviceIDs;
 
 @Logged
 public class FreeSpin extends SubsystemBase {
-  final TalonFX intakeWestLeader = new TalonFX( DeviceIDs.freeSpinIDs.INTAKE_WEST_LEADER);
+  final TalonFX intakeWestLeader = new TalonFX(DeviceIDs.freeSpinIDs.INTAKE_WEST_LEADER);
   final TalonFX intakeEastFollower = new TalonFX(DeviceIDs.freeSpinIDs.INTAKE_EAST_LEADER);
-  MotionMagicExpoVoltage positionRequest = new MotionMagicExpoVoltage(0);
 
-  Follower intakeFollower = new  Follower(intakeWestLeader.getDeviceID(),MotorAlignmentValue.Opposed);
+  Follower intakeFollower = new Follower(intakeWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
+
   public FreeSpin() {
   }
 
-  public void setLiftPosition(Distance height) {
+  public void setIntakePercentOutput(double percentOutput) {
 
-    intakeWestLeader.setControl(positionRequest.withPosition(height.in(Units.Inches)));
+    intakeWestLeader.set(percentOutput);
     intakeEastFollower.setControl(intakeFollower);
 
   }
 
+  public double getIntakePercentOutput() {
+    return intakeWestLeader.get();
+
+  }
 
   @Override
   public void periodic() {
