@@ -4,12 +4,15 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 @Logged
 public class FreeSpin extends SubsystemBase {
   public FreeSpin() {
+    final TalonFX intakeRollerEastFollower = new TalonFX(DeviceIDs)
   }
 
   @Override
