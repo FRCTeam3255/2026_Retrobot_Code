@@ -12,7 +12,7 @@ public class DeviceIDs {
 
   // Drivetrain IDs: 0~9
   public static class drivetrainIDs {
-    public static final CANBus CAN_BUS_NAME = new CANBus("Swerve");
+    public static final CANBus CAN_BUS_NAME = new CANBus("rio");
     public static final int PIGEON_CAN = 0;
 
     // Module 0
