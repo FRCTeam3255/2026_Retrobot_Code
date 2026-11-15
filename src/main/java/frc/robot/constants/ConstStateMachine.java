@@ -5,14 +5,22 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.robot.RobotContainer;
-import frc.robot.commands.states.*;
-import frc.robot.commands.states.PrepIntakings.*;
+import frc.robot.commands.states.Climbing;
+import frc.robot.commands.states.HasPowerCube;
+import frc.robot.commands.states.Intaking;
+import frc.robot.commands.states.None;
+import frc.robot.commands.states.PrepClimb;
+import frc.robot.commands.states.Scoring;
+import frc.robot.commands.states.PrepIntakings.PrepIntakeLV1;
+import frc.robot.commands.states.PrepIntakings.PrepIntakeLV2;
+import frc.robot.commands.states.PrepIntakings.PrepIntakeLV3;
+import frc.robot.commands.states.PrepIntakings.PrepIntakePortal;
 import frc.robot.commands.states.PrepScorings.PrepExchange;
 import frc.robot.commands.states.PrepScorings.PrepLeveled2Layers;
 import frc.robot.commands.states.PrepScorings.PrepLeveledScale;
 import frc.robot.commands.states.PrepScorings.PrepSwitch;
+import frc.robot.commands.states.PrepScorings.PrepTippedDown2Layers;
 import frc.robot.commands.states.PrepScorings.PrepTippedDownScale;
 import frc.robot.commands.states.PrepScorings.PrepTippedUp2Layers;
 import frc.robot.commands.states.PrepScorings.PrepTippedUpScale;
@@ -33,7 +41,7 @@ public final class ConstStateMachine {
     PREP_TIPPED_UP_SCALE(PrepTippedUpScale::new),
     PREP_TIPPED_UP_2_LAYERS(PrepTippedUp2Layers::new),
     PREP_TIPPED_DOWN_SCALE(PrepTippedDownScale::new),
-    PREP_TIPPED_DOWN_2_LAYERS(PrepTippedUp2Layers::new),
+    PREP_TIPPED_DOWN_2_LAYERS(PrepTippedDown2Layers::new),
     PREP_SWITCH(PrepSwitch::new),
     INTAKING(Intaking::new),
     HAS_POWER_CUBE(HasPowerCube::new),
@@ -64,7 +72,14 @@ public final class ConstStateMachine {
               RobotStates.PREP_INTAKE_LV1,
               RobotStates.PREP_INTAKE_LV2,
               RobotStates.PREP_INTAKE_LV3,
-              RobotStates.PREP_INTAKE_PORTAL)),
+              RobotStates.PREP_INTAKE_PORTAL,
+              RobotStates.PREP_CLIMB)),
+
+          Map.entry(RobotStates.PREP_INTAKE_PORTAL, Set.of(
+              RobotStates.INTAKING,
+              RobotStates.PREP_INTAKE_LV2,
+              RobotStates.PREP_INTAKE_LV3,
+              RobotStates.PREP_INTAKE_LV1)),
 
           Map.entry(RobotStates.PREP_INTAKE_LV1, Set.of(
               RobotStates.INTAKING,
