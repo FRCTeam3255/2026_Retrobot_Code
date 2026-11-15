@@ -52,14 +52,15 @@ public class ConstPositional {
     LIFT_CONFIG.Slot0.kP = 0;
     LIFT_CONFIG.Slot0.kI = 0;
     LIFT_CONFIG.Slot0.kD = 0;
-    LIFT_CONFIG.Slot0.kS = 0.3;
-    LIFT_CONFIG.Slot0.kG = 0.15;
+    LIFT_CONFIG.Slot0.kS = 0.0;
+    LIFT_CONFIG.Slot0.kG = 0.0;
 
-    LIFT_CONFIG.Feedback.SensorToMechanismRatio = 0;
+    LIFT_CONFIG.Feedback.SensorToMechanismRatio = 1.0 / ((12.0 / 48.0) * (24.0 / 60.0) * (1.751 * Math.PI));
+
     LIFT_CONFIG.MotionMagic.MotionMagicCruiseVelocity = 0;
     LIFT_CONFIG.MotionMagic.MotionMagicAcceleration = 0;
-    LIFT_CONFIG.MotionMagic.MotionMagicExpo_kV = 0.04;
-    LIFT_CONFIG.MotionMagic.MotionMagicExpo_kA = 0.005;
+    LIFT_CONFIG.MotionMagic.MotionMagicExpo_kV = 0.00;
+    LIFT_CONFIG.MotionMagic.MotionMagicExpo_kA = 0.00;
     LIFT_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = true;
     LIFT_CONFIG.CurrentLimits.SupplyCurrentLowerLimit = 30;
     LIFT_CONFIG.CurrentLimits.SupplyCurrentLimit = 60;
