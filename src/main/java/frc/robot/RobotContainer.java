@@ -18,6 +18,7 @@ import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_LEVELED_2_L
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_LEVELED_SCALE;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_SWITCH;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_DOWN_2_LAYERS;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_DOWN_SCALE;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_UP_2_LAYERS;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_UP_SCALE;
 import static frc.robot.constants.ConstStateMachine.RobotStates.SCORING;
@@ -41,22 +42,6 @@ import edu.wpi.first.wpilibj2.command.DeferredCommand;
 import frc.robot.DeviceIDs.controllerIDs;
 import frc.robot.commands.AddVisionMeasurement;
 import frc.robot.commands.ResetPose;
-import frc.robot.commands.states.Climbing;
-import frc.robot.commands.states.Intaking;
-import frc.robot.commands.states.None;
-import frc.robot.commands.states.PrepClimb;
-import frc.robot.commands.states.Scoring;
-import frc.robot.commands.states.PrepIntakings.PrepIntakeLV1;
-import frc.robot.commands.states.PrepIntakings.PrepIntakeLV2;
-import frc.robot.commands.states.PrepIntakings.PrepIntakeLV3;
-import frc.robot.commands.states.PrepIntakings.PrepIntakePortal;
-import frc.robot.commands.states.PrepScorings.PrepExchange;
-import frc.robot.commands.states.PrepScorings.PrepLeveled2Layers;
-import frc.robot.commands.states.PrepScorings.PrepLeveledScale;
-import frc.robot.commands.states.PrepScorings.PrepSwitch;
-import frc.robot.commands.states.PrepScorings.PrepTippedDown2Layers;
-import frc.robot.commands.states.PrepScorings.PrepTippedUp2Layers;
-import frc.robot.commands.states.PrepScorings.PrepTippedUpScale;
 import frc.robot.constants.ChoreoTraj;
 import frc.robot.constants.ConstStateMachine.RobotStates;
 import frc.robot.constants.ConstSystem;
@@ -170,26 +155,26 @@ public class RobotContainer {
     conDriver.btn_Y
         .onTrue(PREP_TIPPED_UP_SCALE.TRY());
 
-    conDriver.btn_B
-        .onTrue(PREP_LEVELED_SCALE.TRY());
-
-    conDriver.btn_A
-        .onTrue(PREP_TIPPED_UP_SCALE.TRY());
-
-    conDriver.btn_X
-        .onTrue(PREP_SWITCH.TRY());
-
     conDriver.btn_Y
         .onTrue(PREP_INTAKE_LV3.TRY());
 
     conDriver.btn_B
+        .onTrue(PREP_LEVELED_SCALE.TRY());
+
+    conDriver.btn_B
         .onTrue(PREP_INTAKE_LV2.TRY());
 
-    conDriver.btn_Y
-        .onTrue(PREP_INTAKE_LV1.TRY());
+    conDriver.btn_X
+        .onTrue(PREP_SWITCH.TRY());
 
-    conDriver.btn_Y
+    conDriver.btn_X
         .onTrue(PREP_INTAKE_PORTAL.TRY());
+
+    conDriver.btn_A
+        .onTrue(PREP_TIPPED_DOWN_SCALE.TRY());
+
+    conDriver.btn_A
+        .onTrue(PREP_INTAKE_LV1.TRY());
 
     conDriver.btn_LeftStick
         .onTrue(HAS_POWER_CUBE.TRY());
