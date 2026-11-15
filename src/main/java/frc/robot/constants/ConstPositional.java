@@ -15,6 +15,8 @@ import edu.wpi.first.units.measure.Distance;
 /** Add your docs here. */
 public class ConstPositional {
   public static final double STOP = 0;
+
+  public static final Distance PREP_SWITCH = Units.Inches.of(0); // TODO:GET ACTUAL VALUE
   public static final double FORK_OUT = 0.2;
   public static final Distance CLIMB = Units.Inches.of(0);
   public static final Distance PREP_CLIMB = Units.Inches.of(50); // TODO:GET ACTUAL VALUE
