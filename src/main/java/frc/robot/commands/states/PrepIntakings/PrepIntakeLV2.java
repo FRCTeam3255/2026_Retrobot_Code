@@ -4,34 +4,14 @@
 
 package frc.robot.commands.states.PrepIntakings;
 
-import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.constants.ConstPositional;
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class PrepIntakeLV2 extends Command {
+public class PrepIntakeLV2 extends BasePrepIntake {
   /** Creates a new PrepIntakeLV2. */
+
   public PrepIntakeLV2() {
-    // Use addRequirements() here to declare subsystem dependencies.
-  }
+    super(ConstPositional.PREP_INTAKE_LV2_HEIGHT);
 
-  // Called when the command is initially scheduled.
-  @Override
-  public void initialize() {
-
-  }
-
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {
-  }
-
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
-  }
-
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
   }
 }
