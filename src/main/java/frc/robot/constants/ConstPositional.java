@@ -22,6 +22,11 @@ public class ConstPositional {
   public static final Distance PREP_CLIMB = Units.Inches.of(50); // TODO:GET ACTUAL VALUE
   public static final Distance PREP_EXCHANGE_HEIGHT = Units.Inches.of(5);
   public static final Distance ZERO = Units.Inches.of(0);
+  public static final Distance PREP_INTAKE_LV1_HEIGHT = Units.Inches.of(10);  // TODO:GET ACTUAL VALUE
+  public static final Distance PREP_INTAKE_LV2_HEIGHT = Units.Inches.of(15);  // TODO:GET ACTUAL VALUE
+  public static final Distance PREP_INTAKE_LV3_HEIGHT = Units.Inches.of(20);  // TODO:GET ACTUAL VALUE
+  public static final Distance PREP_INTAKE_PORTAL = Units.Inches.of(5);  // TODO:GET ACTUAL VALUE
+
   public static TalonFXConfiguration LIFT_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
 
