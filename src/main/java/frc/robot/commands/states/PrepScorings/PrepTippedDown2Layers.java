@@ -11,7 +11,7 @@ public class PrepTippedDown2Layers extends BasePrepScoring {
   /** Creates a new PrepTippedDown2Layers. */
   public PrepTippedDown2Layers() {
     // Use addRequirements() here to declare subsystem dependencies.
-    super(ConstPositional.PREP_TIPPEDDOWN2LAYERS_HEIGHT);
+    super(ConstPositional.PREP_TIPPED_DOWN_2_LAYERS_HEIGHT);
    }
   }
 
