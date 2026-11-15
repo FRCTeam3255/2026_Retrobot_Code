@@ -20,6 +20,7 @@ public class ConstPositional {
   public static final Distance PREP_CLIMB = Units.Inches.of(50); // TODO:GET ACTUAL VALUE
   public static final Distance PREP_EXCHANGE_HEIGHT = Units.Inches.of(5);
   public static final Distance PREP_TIPPED_UP_2_LAYERS_HEIGHT = Units.Inches.of(15);
+  public static final Distance PREP_TIPPED_UP_SCALE_HEIGHT = Units.Inches.of(12);
   public static final Distance ZERO = Units.Inches.of(0);
   public static TalonFXConfiguration LIFT_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
