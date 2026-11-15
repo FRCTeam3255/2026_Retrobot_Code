@@ -20,6 +20,7 @@ import frc.robot.commands.states.PrepScorings.PrepExchange;
 import frc.robot.commands.states.PrepScorings.PrepLeveled2Layers;
 import frc.robot.commands.states.PrepScorings.PrepLeveledScale;
 import frc.robot.commands.states.PrepScorings.PrepSwitch;
+import frc.robot.commands.states.PrepScorings.PrepTippedDown2Layers;
 import frc.robot.commands.states.PrepScorings.PrepTippedDownScale;
 import frc.robot.commands.states.PrepScorings.PrepTippedUp2Layers;
 import frc.robot.commands.states.PrepScorings.PrepTippedUpScale;
@@ -40,7 +41,7 @@ public final class ConstStateMachine {
     PREP_TIPPED_UP_SCALE(PrepTippedUpScale::new),
     PREP_TIPPED_UP_2_LAYERS(PrepTippedUp2Layers::new),
     PREP_TIPPED_DOWN_SCALE(PrepTippedDownScale::new),
-    PREP_TIPPED_DOWN_2_LAYERS(PrepTippedUp2Layers::new),
+    PREP_TIPPED_DOWN_2_LAYERS(PrepTippedDown2Layers::new),
     PREP_SWITCH(PrepSwitch::new),
     INTAKING(Intaking::new),
     HAS_POWER_CUBE(HasPowerCube::new),

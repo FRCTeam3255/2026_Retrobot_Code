@@ -18,6 +18,7 @@ import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_LEVELED_2_L
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_LEVELED_SCALE;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_SWITCH;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_DOWN_2_LAYERS;
+import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_DOWN_SCALE;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_UP_2_LAYERS;
 import static frc.robot.constants.ConstStateMachine.RobotStates.PREP_TIPPED_UP_SCALE;
 import static frc.robot.constants.ConstStateMachine.RobotStates.SCORING;
@@ -170,7 +171,7 @@ public class RobotContainer {
         .onTrue(PREP_INTAKE_PORTAL.TRY());
 
     conDriver.btn_A
-        .onTrue(PREP_TIPPED_UP_SCALE.TRY());
+        .onTrue(PREP_TIPPED_DOWN_SCALE.TRY());
 
     conDriver.btn_A
         .onTrue(PREP_INTAKE_LV1.TRY());
