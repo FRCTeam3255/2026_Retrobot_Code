@@ -15,13 +15,25 @@ import edu.wpi.first.units.measure.Distance;
 /** Add your docs here. */
 public class ConstPositional {
   public static final double STOP = 0;
+
+  public static final Distance PREP_SWITCH = Units.Inches.of(0); // TODO:GET ACTUAL VALUE
   public static final double FORK_OUT = 0.2;
   public static final Distance CLIMB = Units.Inches.of(0);
   public static final Distance PREP_CLIMB = Units.Inches.of(50); // TODO:GET ACTUAL VALUE
   public static final Distance PREP_EXCHANGE_HEIGHT = Units.Inches.of(5);
   public static final Distance PREP_TIPPED_UP_2_LAYERS_HEIGHT = Units.Inches.of(15);
   public static final Distance PREP_TIPPED_UP_SCALE_HEIGHT = Units.Inches.of(12);
+  public static final Distance PREP_TIPPED_DOWN_SCALE_HEIGHT = Units.Inches.of(5);
+  public static final Distance PREP_LEVELED_2_LAYERS_HEIGHT = Units.Inches.of(5);
+  public static final Distance PREP_TIPPED_DOWN_2_LAYERS_HEIGHT = Units.Inches.of(5);
+  public static final Distance PREP_SCALE_HEIGHT = Units.Inches.of(5);
+
   public static final Distance ZERO = Units.Inches.of(0);
+  public static final Distance PREP_INTAKE_LV1_HEIGHT = Units.Inches.of(10); // TODO:GET ACTUAL VALUE
+  public static final Distance PREP_INTAKE_LV2_HEIGHT = Units.Inches.of(15); // TODO:GET ACTUAL VALUE
+  public static final Distance PREP_INTAKE_LV3_HEIGHT = Units.Inches.of(20); // TODO:GET ACTUAL VALUE
+  public static final Distance PREP_INTAKE_PORTAL = Units.Inches.of(5); // TODO:GET ACTUAL VALUE
+
   public static TalonFXConfiguration LIFT_CONFIG = new TalonFXConfiguration();
   public static TalonFXConfiguration FORK_CONFIG = new TalonFXConfiguration();
 
