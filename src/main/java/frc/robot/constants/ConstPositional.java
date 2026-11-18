@@ -45,7 +45,7 @@ public class ConstPositional {
     FORK_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
 
     WEST_LIFT_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-    WEST_LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
+    WEST_LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
     WEST_LIFT_CONFIG.SoftwareLimitSwitch.ForwardSoftLimitEnable = true;
     WEST_LIFT_CONFIG.SoftwareLimitSwitch.ForwardSoftLimitThreshold = Units.Inches.of(29.5).in(Units.Inches);
     WEST_LIFT_CONFIG.SoftwareLimitSwitch.ReverseSoftLimitEnable = true;
@@ -54,7 +54,7 @@ public class ConstPositional {
     WEST_LIFT_CONFIG.Slot0.kP = 0;
     WEST_LIFT_CONFIG.Slot0.kI = 0;
     WEST_LIFT_CONFIG.Slot0.kD = 0;
-    WEST_LIFT_CONFIG.Slot0.kS = 0.0;
+    WEST_LIFT_CONFIG.Slot0.kS = 0.2;
     WEST_LIFT_CONFIG.Slot0.kG = 0.0;
     WEST_LIFT_CONFIG.Slot0.StaticFeedforwardSign = StaticFeedforwardSignValue.UseClosedLoopSign;
 
@@ -70,7 +70,7 @@ public class ConstPositional {
     WEST_LIFT_CONFIG.CurrentLimits.SupplyCurrentLowerTime = 1;
 
     EAST_LIFT_CONFIG.MotorOutput.NeutralMode = NeutralModeValue.Brake;
-    EAST_LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.CounterClockwise_Positive;
+    EAST_LIFT_CONFIG.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
     EAST_LIFT_CONFIG.SoftwareLimitSwitch.ForwardSoftLimitEnable = true;
     EAST_LIFT_CONFIG.SoftwareLimitSwitch.ForwardSoftLimitThreshold = Units.Inches.of(29.5).in(Units.Inches);
     EAST_LIFT_CONFIG.SoftwareLimitSwitch.ReverseSoftLimitEnable = true;
@@ -79,7 +79,7 @@ public class ConstPositional {
     EAST_LIFT_CONFIG.Slot0.kP = 0;
     EAST_LIFT_CONFIG.Slot0.kI = 0;
     EAST_LIFT_CONFIG.Slot0.kD = 0;
-    EAST_LIFT_CONFIG.Slot0.kS = 0.0;
+    EAST_LIFT_CONFIG.Slot0.kS = 0.2;
     EAST_LIFT_CONFIG.Slot0.kG = 0.0;
     EAST_LIFT_CONFIG.Slot0.StaticFeedforwardSign = StaticFeedforwardSignValue.UseClosedLoopSign;
 
