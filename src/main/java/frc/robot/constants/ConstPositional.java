@@ -51,7 +51,7 @@ public class ConstPositional {
     WEST_LIFT_CONFIG.SoftwareLimitSwitch.ReverseSoftLimitEnable = true;
     WEST_LIFT_CONFIG.SoftwareLimitSwitch.ReverseSoftLimitThreshold = Units.Inches.of(0).in(Units.Inches);
     WEST_LIFT_CONFIG.Slot0.GravityType = GravityTypeValue.Elevator_Static;
-    WEST_LIFT_CONFIG.Slot0.kP = 0;
+    WEST_LIFT_CONFIG.Slot0.kP = 3;
     WEST_LIFT_CONFIG.Slot0.kI = 0;
     WEST_LIFT_CONFIG.Slot0.kD = 0;
     WEST_LIFT_CONFIG.Slot0.kS = 0.2;
@@ -62,7 +62,7 @@ public class ConstPositional {
 
     WEST_LIFT_CONFIG.MotionMagic.MotionMagicCruiseVelocity = 0;
     WEST_LIFT_CONFIG.MotionMagic.MotionMagicAcceleration = 0;
-    WEST_LIFT_CONFIG.MotionMagic.MotionMagicExpo_kV = 0.00;
+    WEST_LIFT_CONFIG.MotionMagic.MotionMagicExpo_kV = 0.3;
     WEST_LIFT_CONFIG.MotionMagic.MotionMagicExpo_kA = 0.00;
     WEST_LIFT_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = true;
     WEST_LIFT_CONFIG.CurrentLimits.SupplyCurrentLowerLimit = 30;
@@ -76,7 +76,7 @@ public class ConstPositional {
     EAST_LIFT_CONFIG.SoftwareLimitSwitch.ReverseSoftLimitEnable = true;
     EAST_LIFT_CONFIG.SoftwareLimitSwitch.ReverseSoftLimitThreshold = Units.Inches.of(0).in(Units.Inches);
     EAST_LIFT_CONFIG.Slot0.GravityType = GravityTypeValue.Elevator_Static;
-    EAST_LIFT_CONFIG.Slot0.kP = 0;
+    EAST_LIFT_CONFIG.Slot0.kP = 3;
     EAST_LIFT_CONFIG.Slot0.kI = 0;
     EAST_LIFT_CONFIG.Slot0.kD = 0;
     EAST_LIFT_CONFIG.Slot0.kS = 0.2;
@@ -87,7 +87,7 @@ public class ConstPositional {
 
     EAST_LIFT_CONFIG.MotionMagic.MotionMagicCruiseVelocity = 0;
     EAST_LIFT_CONFIG.MotionMagic.MotionMagicAcceleration = 0;
-    EAST_LIFT_CONFIG.MotionMagic.MotionMagicExpo_kV = 0.00;
+    EAST_LIFT_CONFIG.MotionMagic.MotionMagicExpo_kV = 0.3;
     EAST_LIFT_CONFIG.MotionMagic.MotionMagicExpo_kA = 0.00;
     EAST_LIFT_CONFIG.CurrentLimits.SupplyCurrentLimitEnable = true;
     EAST_LIFT_CONFIG.CurrentLimits.SupplyCurrentLowerLimit = 30;
