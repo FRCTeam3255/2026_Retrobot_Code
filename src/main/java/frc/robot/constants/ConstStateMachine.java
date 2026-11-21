@@ -73,7 +73,8 @@ public final class ConstStateMachine {
               RobotStates.PREP_INTAKE_LV2,
               RobotStates.PREP_INTAKE_LV3,
               RobotStates.PREP_INTAKE_PORTAL,
-              RobotStates.PREP_CLIMB)),
+              RobotStates.PREP_CLIMB, 
+              RobotStates.INTAKING)),
 
           Map.entry(RobotStates.PREP_INTAKE_PORTAL, Set.of(
               RobotStates.INTAKING,
