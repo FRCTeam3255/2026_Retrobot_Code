@@ -39,6 +39,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.DeferredCommand;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.DeviceIDs.controllerIDs;
 import frc.robot.commands.AddVisionMeasurement;
 import frc.robot.commands.ResetPose;
@@ -83,6 +84,8 @@ public class RobotContainer {
   private final Vision loggedVisionInstance = visionInstance;
   public static final Telemetry telemetryInstance = new Telemetry();
   private final Telemetry loggedTelemetryInstance = telemetryInstance;
+
+  private Trigger hasPowerCubeTrigger = new Trigger(() -> freeSpinInstance.ifHasPowerCube);
 
   Command MANUAL = new DeferredCommand(
       driverStateMachineInstance.tryState(
@@ -177,6 +180,9 @@ public class RobotContainer {
         .onTrue(PREP_INTAKE_LV1.TRY());
 
     conDriver.btn_LeftStick
+        .onTrue(HAS_POWER_CUBE.TRY());
+
+    hasPowerCubeTrigger
         .onTrue(HAS_POWER_CUBE.TRY());
 
   }
