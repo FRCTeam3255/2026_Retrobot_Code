@@ -56,8 +56,8 @@ public class FreeSpin extends SubsystemBase {
     AngularAcceleration intakeAcceleration = intakeWestLeader.getAcceleration().getValue();
 
     AngularAcceleration zero = Units.DegreesPerSecondPerSecond.of(0);
-    if (intakeCurrent.gte(intakeCurrent) &&
-        intakeVelocity.lte(intakeVelocity) &&
+    if (intakeCurrent.gte(ConstFreeSpin.INTAKE_CUBE_CURRENT) &&
+        intakeVelocity.lte(ConstFreeSpin.INTAKE_CUBE_VELOCITY) &&
         intakeAcceleration.lte(zero)) {
       ifHasPowerCube = true;
       return true;
