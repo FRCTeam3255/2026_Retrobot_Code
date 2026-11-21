@@ -16,6 +16,7 @@ import edu.wpi.first.units.measure.Current;
 public class ConstFreeSpin {
 
   public static final double STOP = 0;
+  public static final double HAS_POWER_CUBE_PERCENT_OUT = 0.25;
   public static final double INTAKE_CUBE_PERCENT_OUT = 1;
   public static double INTAKE_SCORING_PERCENT_OUTPUT = -1;
 
