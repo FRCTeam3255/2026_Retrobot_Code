@@ -119,25 +119,25 @@ public class RobotContainer {
   }
 
   private void configDriverBindings() {
-    conDriver.btn_North.onTrue(new ResetPose());
+    conDriver.btn_North.whileTrue(new ResetPose());
 
-    conDriver.btn_North
-        .onTrue(NONE.TRY())
-        .onFalse(NONE.TRY());
+    // conDriver.btn_North
+    //     .onTrue(NONE.TRY())
+    //     .onFalse(NONE.TRY());
 
     conDriver.btn_LeftTrigger
         .whileTrue(INTAKING.TRY())
         .onFalse(NONE.TRY());
 
     conDriver.btn_RightTrigger
-        .whileTrue(SCORING.TRY())
-        .onFalse(NONE.TRY());
+        .whileTrue(SCORING.TRY());
+        
 
     conDriver.btn_Back
         .onTrue(PREP_CLIMB.TRY());
 
     conDriver.btn_RightBumper
-        .onTrue(PREP_EXCHANGE.TRY());
+        .onTrue(NONE.TRY());
 
     conDriver.btn_RightStick
         .onTrue(NONE.TRY())
@@ -158,26 +158,26 @@ public class RobotContainer {
     conDriver.btn_Y
         .onTrue(PREP_TIPPED_UP_SCALE.TRY());
 
-    conDriver.btn_Y
-        .onTrue(PREP_INTAKE_LV3.TRY());
+    // conDriver.btn_Y
+    //     .onTrue(PREP_INTAKE_LV3.TRY());
 
     conDriver.btn_B
         .onTrue(PREP_LEVELED_SCALE.TRY());
 
-    conDriver.btn_B
-        .onTrue(PREP_INTAKE_LV2.TRY());
+    // conDriver.btn_B
+    //     .onTrue(PREP_INTAKE_LV2.TRY());
 
     conDriver.btn_X
         .onTrue(PREP_SWITCH.TRY());
 
-    conDriver.btn_X
-        .onTrue(PREP_INTAKE_PORTAL.TRY());
+    // conDriver.btn_X
+    //     .onTrue(PREP_INTAKE_PORTAL.TRY());
 
     conDriver.btn_A
         .onTrue(PREP_TIPPED_DOWN_SCALE.TRY());
 
-    conDriver.btn_A
-        .onTrue(PREP_INTAKE_LV1.TRY());
+    // conDriver.btn_A
+    //     .onTrue(PREP_INTAKE_LV1.TRY());
 
     conDriver.btn_LeftStick
         .onTrue(HAS_POWER_CUBE.TRY());

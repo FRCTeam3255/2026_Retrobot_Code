@@ -21,7 +21,7 @@ public class ConstPositional {
   public static final double FORK_OUT = 0.2;
   public static final Distance CLIMB = Units.Inches.of(0);
   public static final Distance PREP_CLIMB = Units.Inches.of(28.5); // TODO:GET ACTUAL VALUE
-  public static final Distance PREP_EXCHANGE_HEIGHT = Units.Inches.of(5);
+  public static final Distance PREP_EXCHANGE_HEIGHT = Units.Inches.of(0);
   public static final Distance PREP_TIPPED_UP_2_LAYERS_HEIGHT = Units.Inches.of(15);
   public static final Distance PREP_TIPPED_UP_SCALE_HEIGHT = Units.Inches.of(12);
   public static final Distance PREP_TIPPED_DOWN_SCALE_HEIGHT = Units.Inches.of(5);
