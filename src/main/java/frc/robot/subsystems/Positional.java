@@ -20,7 +20,7 @@ import frc.robot.constants.ConstPositional;
 @Logged
 public class Positional extends SubsystemBase {
   MotionMagicExpoVoltage positionRequest = new MotionMagicExpoVoltage(0);
-  private Distance elevatorLiftLastDesiredPosition = Units.Inches.zero();
+  public Distance elevatorLiftLastDesiredPosition = Units.Inches.zero();
 
   final TalonFX elevatorWestLeader = new TalonFX(DeviceIDs.positionalIDs.ELEVATOR_WEST_CAN);
   final TalonFX elevatorEastFollower = new TalonFX(DeviceIDs.positionalIDs.ELEVATOR_EAST_CAN);
@@ -29,8 +29,8 @@ public class Positional extends SubsystemBase {
   Follower ElevatorFollower = new Follower(elevatorWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
 
   public Positional() {
-    elevatorEastFollower.getConfigurator().apply(ConstPositional.LIFT_CONFIG);
-    elevatorWestLeader.getConfigurator().apply(ConstPositional.LIFT_CONFIG);
+    elevatorEastFollower.getConfigurator().apply(ConstPositional.EAST_LIFT_CONFIG);
+    elevatorWestLeader.getConfigurator().apply(ConstPositional.WEST_LIFT_CONFIG);
     forkLift.getConfigurator().apply(ConstPositional.FORK_CONFIG);
   }
 
