@@ -9,6 +9,10 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.MotorAlignmentValue;
 
 import edu.wpi.first.epilogue.Logged;
+import edu.wpi.first.units.Units;
+import edu.wpi.first.units.measure.AngularAcceleration;
+import edu.wpi.first.units.measure.AngularVelocity;
+import edu.wpi.first.units.measure.Current;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.DeviceIDs;
 import frc.robot.Robot;
@@ -22,6 +26,8 @@ public class FreeSpin extends SubsystemBase {
   Follower intakeFollower = new Follower(intakeWestLeader.getDeviceID(), MotorAlignmentValue.Opposed);
 
   private double lastDesiredIntakePercentOutput = 0;
+
+  public boolean ifHasPowerCube = false;
 
   public FreeSpin() {
     intakeWestLeader.getConfigurator().apply(ConstFreeSpin.INTAKE_WEST_CONFIG);
@@ -42,6 +48,23 @@ public class FreeSpin extends SubsystemBase {
       return lastDesiredIntakePercentOutput;
     }
     return intakeWestLeader.get();
+  }
+
+  public boolean hasPowerCube() {
+    Current intakeCurrent = intakeWestLeader.getSupplyCurrent().getValue();
+    AngularVelocity intakeVelocity = intakeWestLeader.getVelocity().getValue();
+    AngularAcceleration intakeAcceleration = intakeWestLeader.getAcceleration().getValue();
+
+    AngularAcceleration zero = Units.DegreesPerSecondPerSecond.of(0);
+    if (intakeCurrent.gte(ConstFreeSpin.INTAKE_CUBE_CURRENT) &&
+        intakeVelocity.lte(ConstFreeSpin.INTAKE_CUBE_VELOCITY) &&
+        intakeAcceleration.lte(zero)) {
+      ifHasPowerCube = true;
+      return true;
+    } else {
+      ifHasPowerCube = false;
+      return false;
+    }
   }
 
   @Override
