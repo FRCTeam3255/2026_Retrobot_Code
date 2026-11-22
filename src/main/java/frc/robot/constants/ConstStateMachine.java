@@ -105,7 +105,6 @@ public final class ConstStateMachine {
               RobotStates.NONE)),
 
           Map.entry(RobotStates.HAS_POWER_CUBE, Set.of(
-              RobotStates.NONE,
               RobotStates.PREP_EXCHANGE,
               RobotStates.PREP_LEVELED_SCALE,
               RobotStates.PREP_LEVELED_2_LAYERS,

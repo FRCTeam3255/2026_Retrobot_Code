@@ -126,8 +126,8 @@ public class RobotContainer {
     //     .onFalse(NONE.TRY());
 
     conDriver.btn_LeftTrigger
-        .whileTrue(INTAKING.TRY())
-        .onFalse(NONE.TRY());
+        .whileTrue(INTAKING.TRY());
+        
 
     conDriver.btn_RightTrigger
         .whileTrue(SCORING.TRY());
