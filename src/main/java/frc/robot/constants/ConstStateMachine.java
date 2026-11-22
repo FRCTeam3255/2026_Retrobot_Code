@@ -73,7 +73,7 @@ public final class ConstStateMachine {
               RobotStates.PREP_INTAKE_LV2,
               RobotStates.PREP_INTAKE_LV3,
               RobotStates.PREP_INTAKE_PORTAL,
-              RobotStates.PREP_CLIMB, 
+              RobotStates.PREP_CLIMB,
               RobotStates.INTAKING)),
 
           Map.entry(RobotStates.PREP_INTAKE_PORTAL, Set.of(
@@ -105,7 +105,6 @@ public final class ConstStateMachine {
               RobotStates.NONE)),
 
           Map.entry(RobotStates.HAS_POWER_CUBE, Set.of(
-              RobotStates.NONE,
               RobotStates.PREP_EXCHANGE,
               RobotStates.PREP_LEVELED_SCALE,
               RobotStates.PREP_LEVELED_2_LAYERS,
@@ -113,7 +112,8 @@ public final class ConstStateMachine {
               RobotStates.PREP_TIPPED_UP_2_LAYERS,
               RobotStates.PREP_TIPPED_DOWN_SCALE,
               RobotStates.PREP_TIPPED_DOWN_2_LAYERS,
-              RobotStates.PREP_SWITCH)),
+              RobotStates.PREP_SWITCH,
+              RobotStates.SCORING)),
 
           Map.entry(RobotStates.PREP_EXCHANGE, Set.of(
               RobotStates.SCORING,
